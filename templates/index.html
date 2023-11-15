@@ -1,0 +1,44 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel= "stylesheet" type= "text/css" href= "../static/css/style.css">
+</head>
+<body>
+  <div class="forms">
+    
+    <p><h1 id="titulobranco">Classificador de Cafeína</h1></p>
+    <form class="container" action="{{ url_for('predict')}}" method="post" >
+      <div class="input-container">
+      <div class="input-content">
+          <div class="input-dist">
+            <div class="input-type">
+              <input class="input-is" type="text" name="volume" placeholder="Volume (ml)" required="required" />
+              <input class="input-is" type="text" name="calories" placeholder="Calorias" required="required" />
+              <input class="input-is" type="text" name="caffeine" placeholder="Cafeína (mg)" required="required" />
+              <!-- Adicione mais campos conforme necessário -->
+              <select class="input-is"name="type" required="required">
+                <option value="1">Tipo 1</option>
+                <option value="2">Tipo 2</option>
+                <!-- Adicione mais opções conforme necessário -->
+               
+              </select>
+              <div id="prediction">{{ prediction_text }}</div>
+              
+    </div>
+  </div>
+</div>
+</div>
+      <button type="submit" class="button type1"></button>
+    </form>
+    
+    <br>
+    <br>
+  </div>
+  <footer class="footer">Desenvolvido por Alex Souza & Emerson Renaki</footer>
+</body>
+</html>
